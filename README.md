@@ -10,6 +10,14 @@
 * Login with the password from previous steps and the username: admin
 * kubectl describe svc -n jenkins jenkins
 
+## create volume and claim
+
+* create -f  jenkins-hostpath.yaml
+* kubectl create -f  jenkins-pvc.yaml
+* helm install --name my-release --set persistence.existingClaim=jenkins-pvc stable/jenkins
+* [read](https://8gwifi.org/docs/kube-jenkins.jsp)
+
+
 ## Install on Katacoda HELM instruction page and have fun
 
 [Katacoda helm package manager](https://www.katacoda.com/courses/kubernetes/helm-package-manager)
